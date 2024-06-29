@@ -1,0 +1,130 @@
+/* App-level styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #181818;
+  color: #fff;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.spotify-navbar {
+  background-color: #000;
+  padding: 16px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.spotify-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1db954;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: #fff;
+  margin-left: 20px;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #1db954;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 100px;
+  background-color: #1b1a1a;
+  padding: 20px;
+  font-size: large;
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0 ;
+}
+
+.sidebar-link {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.sidebar-link:hover {
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #121212;
+}
+
+.spotify-search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.spotify-search-input {
+  flex: 1;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #1ed760;
+}
+
+@media (max-width: 768px) {
+  .spotify-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .spotify-search-input {
+    margin-bottom: 10px;
+  }
+}
+/* App.css */
+
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  10% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

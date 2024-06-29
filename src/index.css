@@ -1,0 +1,106 @@
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #1db954;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+/* Main content container */
+.container {
+  padding: 20px;
+}
+
+/* Cards for displaying songs or albums */
+.card {
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #555;
+}
+
+/* Footer */
+.footer {
+  background-color: #1db954;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Button styles */
+.btn {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0f8133;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #1db954;
+  border: 1px solid #1db954;
+}
+
+.btn-outline:hover {
+  background-color: #1db954;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
