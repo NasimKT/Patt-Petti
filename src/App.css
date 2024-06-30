@@ -6,7 +6,25 @@ body {
   background-color: #181818;
   color: #fff;
 }
+audio {
+  width: 100%;
+}
 
+/* Change play button color */
+audio::-webkit-media-controls-play-button {
+  background-color: #3498db;
+}
+
+/* Change progress bar color */
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: #3498db;
+}
+
+/* Change volume slider color */
+audio::-webkit-media-controls-volume-slider {
+  background-color: #3498db;
+}
 .app {
   display: flex;
   flex-direction: column;
@@ -101,6 +119,56 @@ body {
 .btn-success:hover {
   background-color: #1ed760;
 }
+
+.home-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.quick-picks, .artists, .playlists {
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.quick-picks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(3, 40px);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quick-pick-item {
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.artists ul, .playlists ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.artists li, .playlists li {
+  padding: 5px 0;
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+
+.artists li:hover, .playlists li:hover {
+  color: #fff;
+}
+
 
 @media (max-width: 768px) {
   .spotify-search-bar {
