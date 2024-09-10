@@ -67,7 +67,7 @@ body {
     appearance: none;
     background: #02fc01;
     width: 100%;
-    height: 1.5vh;
+    height: 20px;
     border-radius: 10px;
     cursor: pointer;
     margin: 40px 0;
@@ -76,14 +76,14 @@ body {
   /* Progress bar fill */
   .progress::-webkit-slider-runnable-track {
     width: 100%;
-    height: 1.5vh;
+    height: 20px;
     background: #02fc01;
     border-radius: 10px;
   }
   
   .progress::-moz-range-track {
     width: 100%;
-    height: 1.5vh;
+    height: 20px;
     background: #02fc01;
     border-radius: 10px;
   }
@@ -97,7 +97,6 @@ body {
     height: 20px;
     border-radius: 50%;
     border: 8px solid #535353;
-    box-shadow: 0 5px 5px rgba(248, 252, 3, 0.22);
   }
   
   .progress::-moz-range-thumb {
@@ -173,4 +172,91 @@ body {
     transform: translateX(100%);
   }
 }
+
+.div-prime{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.queue-container {
+  height: 85vh;
+  width: 30%;
+  margin: 0 auto;
+  background-color: rgb(35, 35, 35);
+  border-radius: 20px;
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  font-family: Arial, sans-serif;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Custom scroll bar styling */
+.queue-container::-webkit-scrollbar {
+  width: 8px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.queue-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+}
+
+.queue-container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.queue {
+  display: grid;
+  gap: 20px;
+}
+
+.que-song-item {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  padding: 5px;
+  background-color: #282828;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* Ensure song items do not overflow */
+  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+}
+
+.que-song-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.que-song-details {
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+}
+
+.que-song-details h5 {
+  margin: 0;
+  color: #7ce61a;
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowed text */
+  text-overflow: ellipsis; /* Add ellipsis (...) to overflowed text */
+}
+
+.que-song-details p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowed text */
+  text-overflow: ellipsis; /* Add ellipsis (...) to overflowed text */
+}
+
+
 
