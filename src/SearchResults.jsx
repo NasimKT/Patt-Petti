@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import './SearchResults.css'; // Custom CSS for styling
+import './SearchResults.css';  
 
 const SearchResults = () => {
   const [songs, setSongs] = useState([]);

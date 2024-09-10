@@ -62,63 +62,115 @@ body {
     margin-bottom: 10px;
     font-size: 16px;
   }
-  
-  .custom-audio {
+  .progress {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #02fc01;
     width: 100%;
-    background-color: #535353;
-    height: 5px;
+    height: 1.5vh;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 40px 0;
+  }
+  
+  /* Progress bar fill */
+  .progress::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1.5vh;
+    background: #02fc01;
+    border-radius: 10px;
+  }
+  
+  .progress::-moz-range-track {
+    width: 100%;
+    height: 1.5vh;
+    background: #02fc01;
+    border-radius: 10px;
+  }
+  
+  /* Thumb slider */
+  .progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #02fc01;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 8px solid #535353;
+    box-shadow: 0 5px 5px rgba(248, 252, 3, 0.22);
+  }
+  
+  .progress::-moz-range-thumb {
+    background: #02fc01;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 8px solid #535353;
+  }
+  
+  /* Focus state (optional) */
+  .progress:focus {
     outline: none;
-    border-radius: 2px;
   }
-  
-  .custom-audio::-webkit-media-controls-play-button {
-    display: none; /* Hide default play button */
-  }
-  
-  .custom-audio::-webkit-media-controls {
+
+  .controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #282828;
-    padding: 10px;
-    border-radius: 8px;
   }
   
-  .custom-audio::-webkit-media-controls-current-time-display,
-  .custom-audio::-webkit-media-controls-time-remaining-display {
-    color: #fff;
-    font-size: 14px;
-  }
-  
-  .custom-audio::-webkit-media-controls-volume-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 80px;
-    height: 5px;
-    background-color: #535353;
-    outline: none;
-    border-radius: 2px;
-  }
-  
-  .custom-audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background-color: #1db954;
+  .controls div {
+    height: 70px; /* Increased size */
+    width: 70px;
+    margin: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #000; /* Set default icon color to black */
+    font-size: 30px; /* Adjust the size of the icon */
   }
   
-  .custom-audio::-webkit-media-controls-volume-slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    background-color: #1db954;
-    border-radius: 50%;
-    cursor: pointer;
+  /* Hover effect: gray circle around the div */
+  .controls div:hover {
+    background-color: rgba(128, 128, 128, 0.2); /* Light gray circle on hover */
   }
   
-  .custom-audio:focus {
-    outline: none;
+  /* Active state: when clicked, change the color */
+  .controls div:active {
+    background-color: #14f195; /* Change to greenish color on click */
+    color: rgb(255, 255, 255); /* Keep icon color black */
   }
   
+/* Add this to your Player.css */
+.wave-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure it's behind the player content */
+}
+
+.wave {
+  position: absolute;
+  width: 200%; /* Extend beyond the container width for continuous animation */
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Light color for the wave effect */
+  animation: wave 10s linear infinite;
+  transform: rotate(0deg);
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
