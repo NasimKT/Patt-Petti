@@ -126,7 +126,7 @@ audio::-webkit-media-controls-volume-slider {
   gap: 20px;
 }
 
-.quick-picks, .artists, .playlists {
+.previously-played, .artists, .playlists {
   background-color: #282828;
   padding: 20px;
   border-radius: 8px;
@@ -134,7 +134,7 @@ audio::-webkit-media-controls-volume-slider {
   overflow: hidden;
 }
 
-.quick-picks-grid {
+.previously-played-grid {
   display: grid;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: repeat(3, 40px);

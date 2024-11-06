@@ -4,7 +4,6 @@ import './SearchResults.css';
 
 const SearchResults = () => {
   const [songs, setSongs] = useState([]);
-  const [song, setsong] = useState(null);
   const location = useLocation();
   const query = new URLSearchParams(location.search).get('query');
 
@@ -26,12 +25,15 @@ const SearchResults = () => {
     }
   }, [query]);
 
-  const playSong = (song) => {
-    setsong(song);
+  const handleSongClick = (song) => {
+    // Update previously played songs in localStorage
+    const previouslyPlayed = JSON.parse(localStorage.getItem('previouslyPlayed')) || [];
+    const updatedPlayed = [...previouslyPlayed.filter(item => item.id !== song.id), song];
+    localStorage.setItem('previouslyPlayed', JSON.stringify(updatedPlayed));
   };
 
-  const stopSong = () => {
-    setsong(null);
+  const playSong = (song) => {
+    handleSongClick(song);  // Save the song to localStorage as previously played
   };
 
   return (
@@ -39,7 +41,12 @@ const SearchResults = () => {
       <h2 className="mb-4">Search Results for "{query}"</h2>
       <div className="song-list">
         {songs.map((song) => (
-          <Link key={song.id} to={`/player/${song.id}`}style={{ textDecoration: 'none' }}>
+          <Link 
+            key={song.id} 
+            to={`/player/${song.id}`} 
+            style={{ textDecoration: 'none' }}
+            onClick={() => playSong(song)}  // Trigger playSong on click
+          >
             <div key={song.id} className="song-item">
               <img src={song.image[2].url} alt={song.name} className="song-image" />
               <div className="song-details">
