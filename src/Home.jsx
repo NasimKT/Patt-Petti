@@ -8,7 +8,6 @@ const Home = () => {
   const ids = [1080335349, 951898142, 550788862, 945969391, 1026391929, 829477391];
 
   useEffect(() => {
-    // Load previously played songs from localStorage
     const loadPreviouslyPlayed = () => {
       const storedSongs = JSON.parse(localStorage.getItem('previouslyPlayed')) || [];
       setPreviouslyPlayed(storedSongs);
@@ -18,7 +17,6 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    // Fetch playlists from API
     const fetchPlaylists = async () => {
       try {
         let allPlaylists = [];

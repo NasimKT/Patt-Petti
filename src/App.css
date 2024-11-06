@@ -35,6 +35,10 @@ audio::-webkit-media-controls-volume-slider {
   background-color: #000;
   padding: 16px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  position: sticky; /* Keeps the navbar at the top of the page when scrolling */
+  top: 0; /* Position it at the top */
+  z-index: 10;
 }
 
 .spotify-brand {
@@ -66,7 +70,12 @@ audio::-webkit-media-controls-volume-slider {
   padding: 20px;
   font-size: large;
   font-weight: 700;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  z-index: 1000; /* Ensures it stays on top of other content */
 }
+
 
 .sidebar ul {
   list-style: none;

@@ -121,7 +121,7 @@ const Player = () => {
 
   return (
     <div className="div-prime">
-      <div className='audio-container' style={{ maxWidth: '400px', margin: '0 auto', backgroundColor: '#232323', borderRadius: '20px', padding: '20px', color: '#fff', fontFamily: 'Arial, sans-serif' }}>
+      <div className='audio-container' style={{ maxWidth: '380px', margin: '0 auto', backgroundColor: '#232323', borderRadius: '20px', padding: '20px', color: '#fff', fontFamily: 'Arial, sans-serif' }}>
         <h2 style={{ textAlign: 'center' }}>Now Playing</h2>
         {data.length > 0 && data.map((song) => (
           <div key={song.id} style={{ textAlign: 'center' }}>

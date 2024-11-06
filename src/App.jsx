@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-do
 import Home from './Home';
 import SearchResults from './SearchResults';
 import Player from './Player';
+import PlaylistDetails from './PlaylistDetails';
 import './App.css';
 
 const App = () => {
@@ -61,7 +62,7 @@ const App = () => {
                   value={searchQuery}
                   onChange={handleSearchChange}
                 />
-                <button type="submit" className="btn btn-success" style={{height:'40px'}}>
+                <button type="submit" className="btn btn-success" style={{ height: '40px' }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                   </svg>
@@ -70,9 +71,10 @@ const App = () => {
             )}
 
             <Routes>
-              <Route exact path="/" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/player/:songId" element={<Player />} />
+              <Route path="/playlist/:id" element={<PlaylistDetails />} /> {/* Corrected to use element */}
             </Routes>
           </Container>
         </main>
