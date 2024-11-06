@@ -40,6 +40,9 @@ audio::-webkit-media-controls-volume-slider {
   top: 0; /* Position it at the top */
   z-index: 10;
 }
+.mb-4, .lead{
+  color: #1db954; /* Sets the text color to the green you provided */
+}
 
 .spotify-brand {
   font-size: 1.8rem;
@@ -102,17 +105,6 @@ audio::-webkit-media-controls-volume-slider {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-}
-
-.spotify-search-input {
-  flex: 1;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #333;
-  border-radius: 4px;
-  font-size: 1rem;
-  background-color: #333;
-  color: #fff;
 }
 
 .btn-success {
@@ -178,18 +170,30 @@ audio::-webkit-media-controls-volume-slider {
   color: #fff;
 }
 
+.spotify-search-input {
+  flex: 1;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  margin-left: 120px; /* Adjust for the sidebar width (100px + padding) */
+}
 
 @media (max-width: 768px) {
   .spotify-search-bar {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .spotify-search-input {
+    margin-left: 0; /* Remove left margin on smaller screens */
     margin-bottom: 10px;
   }
 }
-/* App.css */
+
 
 @keyframes textFade {
   0% {

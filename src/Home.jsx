@@ -46,7 +46,7 @@ const Home = () => {
       <p className="lead">Your personalized music experience awaits!</p>
       <div className="home-sections">
         <div className="previously-played">
-          <h3>Previously Played Songs</h3>
+          <h3 className="mb-4">Previously Played Songs</h3>
           <div className="quick-picks-scroll" style={{ overflowX: 'auto', whiteSpace: 'nowrap', WebkitOverflowScrolling: 'touch' }}>
             {previouslyPlayed.map((song) => (
               <Link key={song.id} to={`/player/${song.id}`} className="quick-pick-link" onClick={() => handleSongClick(song)}>
@@ -62,7 +62,7 @@ const Home = () => {
           </div>
         </div>
         <div className="playlists">
-          <h3>Playlists</h3>
+          <h3 className="mb-4">Playlists</h3>
           <div className="quick-picks-scroll" style={{ overflowX: 'auto', whiteSpace: 'nowrap', WebkitOverflowScrolling: 'touch' }}>
             {playlist.map((list) => (
               <Link key={list.id} to={`/playlist/${list.id}`} className="quick-pick-link">
