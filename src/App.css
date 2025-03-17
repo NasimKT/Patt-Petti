@@ -224,7 +224,15 @@ audio::-webkit-media-controls-volume-slider {
 .sidebar {
   transition: transform 0.3s ease-in-out;
 }
-
+.audio-container{
+  max-width: 380px;
+  margin: 0 auto;
+  background-color: #232323;
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
 @media (max-width: 768px) {
   .hamburger-menu {
     display: block;
@@ -248,5 +256,14 @@ audio::-webkit-media-controls-volume-slider {
     flex-direction: column;
     width: auto;
     gap: 20px;
+  }
+  .audio-container{
+    max-width: 250px;
+    margin: 0 auto;
+    background-color: #232323;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    font-family: Arial, sans-serif;
   }
 }

@@ -121,7 +121,7 @@ const Player = () => {
 
   return (
     <div className="div-prime">
-      <div className='audio-container' style={{ maxWidth: '380px', margin: '0 auto', backgroundColor: '#232323', borderRadius: '20px', padding: '20px', color: '#fff', fontFamily: 'Arial, sans-serif' }}>
+      <div className='audio-container'>
         <h2 style={{ textAlign: 'center' }}>Now Playing</h2>
         {data.length > 0 && data.map((song) => (
           <div key={song.id} style={{ textAlign: 'center' }}>
@@ -160,13 +160,13 @@ const Player = () => {
               </div>
 
               <div className="controls">
-                <div onClick={handleBackward}>
+                <div className='ctrls' onClick={handleBackward}>
                   <FontAwesomeIcon icon={faBackward} />
                 </div>
-                <div onClick={togglePlayPause}>
+                <div className='ctrls' onClick={togglePlayPause}>
                   <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
                 </div>
-                <div onClick={handleForward}>
+                <div className='ctrls' onClick={handleForward}>
                   <FontAwesomeIcon icon={faForward} />
                 </div>
               </div>

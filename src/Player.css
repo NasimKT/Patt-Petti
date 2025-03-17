@@ -178,3 +178,19 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .controls div {
+    height: 45px; 
+    width: 45px;
+    margin: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #000; /* Set default icon color to black */
+    font-size: 30px; /* Adjust the size of the icon */
+  }
+}
