@@ -104,3 +104,46 @@ body {
     font-size: 1.2rem;
   }
 }
+@media (max-width: 768px) {
+  body {
+      font-size: 14px;
+      padding: 10px;
+  }
+  
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+  
+  .player-controls {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .player-controls button {
+      width: 100%;
+      margin-bottom: 5px;
+  }
+  
+  .playlist {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .search-bar {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+  }
+  
+  .track-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  
+  .waveform {
+      width: 100%;
+  }
+}

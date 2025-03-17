@@ -9,6 +9,7 @@ import './App.css';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
   const handleSearchChange = (e) => {
@@ -22,13 +23,15 @@ const App = () => {
     }
   };
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   useEffect(() => {
     const handleContextMenu = (e) => {
-      e.preventDefault(); // Disable the context menu
+      e.preventDefault();
     };
-
     document.addEventListener('contextmenu', handleContextMenu);
-
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
     };
@@ -38,19 +41,26 @@ const App = () => {
     <div className="app">
       <header className="navbar spotify-navbar">
         <Container>
-          <center>
-            <h1 className="brand-name">Patt Petti</h1>
-          </center>
+          <div className="header-content">
+            <button className="hamburger-menu" onClick={toggleSidebar}>
+              ☰
+            </button>
+            <center>
+              <h1 className="brand-name">Patt Petti</h1>
+            </center>
+          </div>
         </Container>
       </header>
+
       <div className="content spotify-content">
-        <aside className="sidebar">
+        <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
           <ul>
-            <li><Link to="/" className="sidebar-link">Home</Link></li>
+            <li><Link to="/" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Home</Link></li>
             <div style={{ paddingBottom: '20px' }}></div>
-            <li><Link to="/search" className="sidebar-link">Search</Link></li>
+            <li><Link to="/search" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Search</Link></li>
           </ul>
         </aside>
+
         <main className="main-content">
           <Container className="mt-4" style={{ maxWidth: '100%' }}>
             {location.pathname === '/search' && (
@@ -74,7 +84,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/player/:songId" element={<Player />} />
-              <Route path="/playlist/:id" element={<PlaylistDetails />} /> {/* Corrected to use element */}
+              <Route path="/playlist/:id" element={<PlaylistDetails />} />
             </Routes>
           </Container>
         </main>
